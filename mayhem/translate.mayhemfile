@@ -1,0 +1,6 @@
+project: wu
+target: translate
+
+cmds:
+  - cmd: /wu x.wu
+    filepath: x.wu
