@@ -1,0 +1,6 @@
+project: wu
+target: translate
+
+cmds:
+  - cmd: /mayhem/translate
+    libfuzzer: true

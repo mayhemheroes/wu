@@ -1,0 +1,11 @@
+# Build outputs / local cruft — keep .git (full history required).
+/target
+target/
+*.o
+*.a
+*.so
+*.dylib
+**/__pycache__/
+.DS_Store
+*.swp
+*~

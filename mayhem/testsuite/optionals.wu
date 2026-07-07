@@ -1,0 +1,11 @@
+print: extern fun(...?)
+
+bee:  int? = 100 + 10
+buzz: int  = bee!
+foo:  int? = bee
+
+print(bee, buzz, foo, nil)
+
+foo: fun -> [int] {
+    [1, 2, 3, 4]
+}

@@ -1,0 +1,28 @@
+Foo: struct {
+    b: int
+}
+
+grr := new Foo {
+    b: 100
+}
+
+grr b += 10
+
+a: int = 100
+
+a *= 100
+a += 10
+a /= 10
+
+c: str = "duggiduggiduk"
+
+c ++= "hey"
+c ++= a 
+
+
+lol: fun(x: int) -> int {
+    return x
+}
+
+print(lol <| 10)
+print(10 |> lol |> lol |> lol)

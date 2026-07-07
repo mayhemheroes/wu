@@ -1,0 +1,14 @@
+babs: fun(x: float?) -> nil {
+  x = nil
+  x
+}
+
+print: extern fun(...?)
+
+while true {
+  print("hey")
+
+  skip
+
+  print("not hey")
+}

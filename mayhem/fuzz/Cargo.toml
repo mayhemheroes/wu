@@ -1,0 +1,25 @@
+[package]
+name = "wu-fuzz"
+version = "0.0.0"
+publish = false
+edition = "2021"
+
+[package.metadata]
+cargo-fuzz = true
+
+[dependencies]
+libfuzzer-sys = "0.4"
+colored = "2.0.0"
+
+# Keep this crate out of any parent workspace.
+[workspace]
+members = ["."]
+
+[profile.release]
+debug = 1
+
+[[bin]]
+name = "translate"
+path = "fuzz_targets/translate.rs"
+test = false
+doc = false

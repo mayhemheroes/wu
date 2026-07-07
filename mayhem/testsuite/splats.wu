@@ -1,0 +1,52 @@
+Vector: struct {
+  x: float
+  y: float
+  z: float
+}
+
+implement Vector {
+  length: fun(self) -> float {
+    (self x^2 + self y^2 + self z^2)^0.5
+  }
+
+  normalize: fun(self) {
+    len := self length()
+
+    self x /= len
+    self y /= len
+    self z /= len
+  }
+}
+
+# binding lua-code is ez
+len:     extern fun([any]) -> int = r"function(a) return #a end"
+println: extern fun(...)          = "print"
+
+normalize_all: fun(bulk: ...Vector?) {
+  i := 1
+  while i < len(bulk) {
+    vector := bulk[i]!
+
+    println(vector length())
+
+    vector normalize()
+
+    println(vector length())
+
+    i += 1
+  }
+}
+
+a := new Vector {
+  x: 100
+  y: 200
+  z: 300
+}
+
+b := new Vector {
+  x: 200
+  y: 300
+  z: 400
+}
+
+normalize_all(a, b)
